@@ -30,7 +30,7 @@ export default async function PaperDetailPage({
   if (!paper) notFound()
 
   return (
-    <main className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
+    <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       <Link
         href="/papers"
         className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-accent-600 transition-colors duration-200"
@@ -39,12 +39,12 @@ export default async function PaperDetailPage({
         Back to papers
       </Link>
 
-      <article className="mt-8">
+      <article className="mt-8 fade-in-up">
         <div className="space-y-3">
-          <div className="text-xs font-semibold tracking-widest uppercase text-accent-500">
+          <div className="font-serif italic text-sm tracking-wide text-accent-500">
             {paper.venue} &middot; {paper.year}
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-text-primary leading-tight">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-text-primary leading-tight">
             {paper.title}
           </h1>
         </div>
@@ -56,7 +56,7 @@ export default async function PaperDetailPage({
         )}
 
         {paper.abstract && (
-          <div className="mt-8 bg-surface-1 rounded-2xl border border-border-light p-6">
+          <div className="mt-8 bg-surface-1 rounded-2xl border border-border-light border-l-2 border-l-accent-300 p-6">
             <h2 className="text-xs font-semibold tracking-widest uppercase text-text-muted mb-3">
               Abstract
             </h2>

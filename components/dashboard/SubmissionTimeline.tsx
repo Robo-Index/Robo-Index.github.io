@@ -25,7 +25,7 @@ export default function SubmissionTimeline({ stages }: { stages: Stage[] }) {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-text-primary mb-1">RA-L Submission Timeline</h2>
+      <h2 className="font-serif text-xl font-normal text-text-primary mb-1">RA-L Submission Timeline</h2>
       <p className="text-sm text-text-muted mb-8">
         Total ~{Math.round(totalMin / 30)}–{Math.round(totalMax / 30)} months · Official guarantee ≤ 6 months
       </p>

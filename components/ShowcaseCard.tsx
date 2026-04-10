@@ -46,7 +46,7 @@ const LANG_COLORS: Record<string, string> = {
 
 export default function ShowcaseCard({ paper, meta }: { paper: Paper; meta?: RepoMeta }) {
   return (
-    <article className="bg-surface-1 rounded-2xl border border-border-light p-5 flex flex-col transition-all duration-300 hover:shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:-translate-y-0.5">
+    <article className="bg-surface-1 rounded-2xl border border-border-light p-5 flex flex-col transition-all duration-300 hover:shadow-[0_4px_24px_rgba(217,119,87,0.08)] hover:-translate-y-1 hover:border-accent-200">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <Link href={`/papers/${paper.slug}`} className="group flex-1 min-w-0">

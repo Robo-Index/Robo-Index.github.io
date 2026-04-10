@@ -97,8 +97,8 @@ export default function DashboardClient() {
       </div>
 
       {/* B. Publication Timeline */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-text-primary">Publication Timeline</h2>
+      <section className="mt-12 scroll-reveal">
+        <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary">Publication Timeline</h2>
         <p className="mt-1 text-sm text-text-secondary">Papers by year</p>
         <div className="mt-6">
           <YearTimeline years={yearsRecord} />
@@ -106,8 +106,8 @@ export default function DashboardClient() {
       </section>
 
       {/* C. Top Research Topics */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-text-primary">Top Research Topics</h2>
+      <section className="mt-12 scroll-reveal">
+        <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary">Top Research Topics</h2>
         <p className="mt-1 text-sm text-text-secondary">Most common tags across papers</p>
         <div className="mt-6">
           <BarChart items={tagItems} maxItems={15} />
@@ -115,8 +115,8 @@ export default function DashboardClient() {
       </section>
 
       {/* D. Tag Cloud */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-text-primary">Tag Cloud</h2>
+      <section className="mt-12 scroll-reveal">
+        <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary">Tag Cloud</h2>
         <p className="mt-1 text-sm text-text-secondary">Research topics at a glance</p>
         <div className="mt-6">
           <TagCloud tags={normalizedTags} limit={40} />
@@ -124,8 +124,8 @@ export default function DashboardClient() {
       </section>
 
       {/* E. Tag Trend Heatmap */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-text-primary">Tag Trends</h2>
+      <section className="mt-12 scroll-reveal">
+        <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary">Tag Trends</h2>
         <p className="mt-1 text-sm text-text-secondary">Top tags by year with trend direction</p>
         <div className="mt-6">
           <TagTrendTable papers={papers} />
@@ -133,8 +133,8 @@ export default function DashboardClient() {
       </section>
 
       {/* F. Venue Breakdown */}
-      <section className="mt-12">
-        <h2 className="text-lg font-semibold text-text-primary">Venue Breakdown</h2>
+      <section className="mt-12 scroll-reveal">
+        <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary">Venue Breakdown</h2>
         <p className="mt-1 text-sm text-text-secondary">Papers by conference or journal</p>
         <div className="mt-6">
           <BarChart items={venueItems} />

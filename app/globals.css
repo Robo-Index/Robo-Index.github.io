@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -36,6 +36,21 @@ body {
 
 ::selection {
   background: rgba(217, 119, 87, 0.3);
+}
+
+/* Global focus-visible ring for interactive elements */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #d97757;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
 }
 
 /* Venue gradient button with diagonal stripe transitions */
@@ -180,9 +195,53 @@ body {
     0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
+/* ── Page-load fade-in stagger ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up   { animation: fadeInUp 0.5s ease-out both; }
+.fade-in-up-1 { animation: fadeInUp 0.5s ease-out 0.05s both; }
+.fade-in-up-2 { animation: fadeInUp 0.5s ease-out 0.1s both; }
+.fade-in-up-3 { animation: fadeInUp 0.5s ease-out 0.15s both; }
+
+/* ── Scroll-triggered reveal (progressive enhancement) ── */
+@supports (animation-timeline: view()) {
+  .scroll-reveal {
+    animation: scrollFadeIn linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+
+  @keyframes scrollFadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .world-map-svg { animation: none; opacity: 0.07; }
   .dark .world-map-svg { opacity: 0.12; }
   .node-pulse { animation: none; opacity: 0; }
+  .fade-in-up,
+  .fade-in-up-1,
+  .fade-in-up-2,
+  .fade-in-up-3 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .scroll-reveal {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
 }

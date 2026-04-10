@@ -66,13 +66,13 @@ const features = [
 
 export default function RalSkillPage() {
   return (
-    <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       {/* Hero */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 fade-in-up">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 text-violet-500 text-xs font-medium mb-4">
           Claude Code Skill
         </div>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
+        <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-text-primary">
           ral.skill
         </h1>
         <p className="mt-2 text-base sm:text-lg text-text-secondary">
@@ -101,7 +101,7 @@ export default function RalSkillPage() {
 
       {/* Source Attribution */}
       <div className="mb-16">
-        <h2 className="text-center text-sm font-medium text-text-muted uppercase tracking-wide mb-6">
+        <h2 className="text-center font-serif text-xl sm:text-2xl font-normal text-text-muted mb-6">
           Three Sources, Fully Traceable
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -125,7 +125,7 @@ export default function RalSkillPage() {
 
       {/* Features */}
       <div className="mb-16">
-        <h2 className="text-lg font-semibold text-text-primary mb-6">7 个功能模块</h2>
+        <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary mb-6">7 个功能模块</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {features.map(f => (
             <div key={f.title} className="p-4 rounded-xl bg-surface-1 border border-border-light">
@@ -139,7 +139,7 @@ export default function RalSkillPage() {
 
       {/* Demo — CLI Conversation Style */}
       <div className="mb-16">
-        <h2 className="text-lg font-semibold text-text-primary mb-6">实际效果</h2>
+        <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary mb-6">实际效果</h2>
         <div className="bg-surface-2 rounded-2xl border border-border-light overflow-hidden font-mono text-sm">
           {/* Terminal title bar */}
           <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border-light">
@@ -189,7 +189,7 @@ export default function RalSkillPage() {
 
       {/* Install */}
       <div className="mb-16">
-        <h2 className="text-lg font-semibold text-text-primary mb-4">安装</h2>
+        <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary mb-4">安装</h2>
         <div className="bg-surface-2 border border-border-light rounded-xl p-5 text-sm font-mono overflow-x-auto">
           <div className="text-text-muted mb-1"># 全局安装</div>
           <div className="text-accent-600 break-all">git clone https://github.com/fly-pigTH/ral-skill ~/.claude/skills/ral-skill</div>

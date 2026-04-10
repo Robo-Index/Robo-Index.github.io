@@ -58,8 +58,8 @@ export default function ContributePage() {
   return (
     <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       {/* Header */}
-      <div className="mb-12">
-        <h1 className="text-3xl font-bold tracking-tight text-text-primary">Contribute</h1>
+      <div className="mb-12 fade-in-up">
+        <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-text-primary">Contribute</h1>
         <p className="mt-2 text-text-secondary">
           RoboIndex is open-source and community-driven. Here's how you can help.
         </p>
@@ -69,7 +69,7 @@ export default function ContributePage() {
       <div className="space-y-6 mb-16">
         {ways.map((w, i) => (
           <div key={i} className="bg-surface-1 border border-border-light rounded-2xl p-6">
-            <h2 className="text-lg font-semibold text-text-primary mb-2">{w.title}</h2>
+            <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary mb-2">{w.title}</h2>
             <p className="text-sm text-text-secondary mb-4">{w.desc}</p>
             <ol className="space-y-2 mb-5">
               {w.steps.map((step, j) => (
@@ -95,7 +95,7 @@ export default function ContributePage() {
 
       {/* Team */}
       <div className="mb-12">
-        <h2 className="text-lg font-semibold text-text-primary mb-6">Team</h2>
+        <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary mb-6">Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {team.map(t => (
             <div key={t.github} className="bg-surface-1 border border-border-light rounded-2xl p-5">

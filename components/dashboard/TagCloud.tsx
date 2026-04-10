@@ -18,7 +18,7 @@ export default function TagCloud({ tags, limit = 40 }: {
       {sorted.map(([tag, count]) => (
         <span
           key={tag}
-          className={`px-3 py-1 rounded-full ${tier(count)}`}
+          className={`px-3 py-1 rounded-full transition-all duration-200 hover:scale-105 cursor-default ${tier(count)}`}
         >
           {tag}
           <span className="ml-1 opacity-60">{count}</span>

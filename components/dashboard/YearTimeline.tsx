@@ -31,7 +31,7 @@ export default function YearTimeline({ years }: { years: Record<string, number> 
           <div key={year} className="flex flex-col items-center gap-1 h-full justify-end">
             <span className="text-xs text-text-muted tabular-nums">{count}</span>
             <div
-              className="w-full max-w-[48px] bg-accent-400 rounded-t-md mx-auto"
+              className="w-full max-w-[48px] bg-gradient-to-t from-accent-500 to-accent-300 rounded-t-md transition-all duration-300 hover:from-accent-600 hover:to-accent-400 mx-auto"
               style={{ height: `${(count / max) * (containerH - 40)}px` }}
             />
           </div>

@@ -4,7 +4,7 @@ import ThemeToggle from './ThemeToggle'
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-surface-0/80 backdrop-blur-md border-b border-border-light">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
         <Link href="/" className="font-semibold text-base sm:text-lg tracking-tight text-text-primary">
           RoboIndex
         </Link>

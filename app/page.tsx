@@ -28,8 +28,8 @@ export default function Home() {
       <div className="hero-glass-mask" aria-hidden="true" />
 
       <div className="relative z-10 max-w-2xl w-full text-center space-y-10">
-        <div className="space-y-4">
-          <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-text-primary">
+        <div className="space-y-4 fade-in-up">
+          <h1 className="hero-title font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-text-primary">
             RoboIndex
           </h1>
           <p className="text-base sm:text-xl text-text-secondary font-light">
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2 fade-in-up-2">
           <div className="flex justify-center items-center flex-wrap gap-x-3 gap-y-1 text-sm text-text-muted">
             <span>{papers.length} papers</span>
             <span className="text-border">|</span>
@@ -64,7 +64,7 @@ export default function Home() {
           <p className="text-xs text-text-muted tracking-wide">1 skill for all</p>
         </div>
 
-        <div className="flex flex-col items-center gap-4 pt-2">
+        <div className="flex flex-col items-center gap-4 pt-2 fade-in-up-3">
           <Link
             href="/papers"
             className="venue-gradient-btn inline-flex items-center gap-2 px-8 py-3 text-sm font-medium text-white rounded-full transition-all duration-200 hover:shadow-lg hover:brightness-110"

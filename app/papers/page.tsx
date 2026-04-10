@@ -14,8 +14,8 @@ export default function PapersPage() {
 
   return (
     <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 overflow-hidden">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight text-text-primary">
+      <div className="mb-10 fade-in-up">
+        <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-text-primary">
           Papers
         </h1>
         <p className="mt-2 text-text-secondary">

@@ -73,7 +73,7 @@ export default function GuideTOC({ nodes }: { nodes: TOCNode[] }) {
                   </button>
                   <a
                     href={`#${node.id}`}
-                    className={`flex-1 py-1.5 text-[12px] leading-snug rounded transition-colors duration-150 ${
+                    className={`flex-1 py-1.5 text-xs leading-snug rounded transition-colors duration-150 ${
                       active
                         ? 'text-text-primary font-semibold'
                         : 'text-text-muted hover:text-text-secondary'
@@ -90,7 +90,7 @@ export default function GuideTOC({ nodes }: { nodes: TOCNode[] }) {
                       <a
                         key={child.id}
                         href={`#${child.id}`}
-                        className={`block py-1 text-[11.5px] leading-snug rounded transition-colors duration-150 ${
+                        className={`block py-1 text-xs leading-snug rounded transition-colors duration-150 ${
                           activeId === child.id
                             ? 'text-accent-600 font-medium'
                             : 'text-text-muted/60 hover:text-text-muted'

@@ -7,7 +7,7 @@ export default function PaperCard({ paper }: { paper: Paper }) {
 
   return (
     <Link href={`/papers/${paper.slug}`} className="block group">
-      <article className="bg-surface-1 rounded-2xl border border-border-light p-4 sm:p-5 transition-all duration-200 hover:shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:-translate-y-0.5 overflow-hidden break-words">
+      <article className="bg-surface-1 rounded-2xl border border-border-light p-4 sm:p-5 transition-all duration-200 hover:shadow-[0_4px_24px_rgba(217,119,87,0.08)] hover:-translate-y-1 hover:border-accent-200 overflow-hidden break-words">
         {/* Title + year */}
         <div className="flex items-start justify-between gap-2 mb-2">
           <h3 className="text-sm sm:text-[15px] font-semibold text-text-primary group-hover:text-accent-600 transition-colors leading-snug line-clamp-2">

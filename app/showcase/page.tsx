@@ -34,13 +34,13 @@ export default function ShowcasePage() {
   }
 
   return (
-    <main className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <main className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       {/* Hero */}
-      <div className="text-center mb-14">
+      <div className="text-center mb-14 fade-in-up">
         <div className="inline-block px-3 py-1 rounded-full bg-accent-50 text-accent-700 text-xs font-semibold tracking-wide uppercase mb-4">
           Open Source
         </div>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
+        <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-text-primary">
           RA-L Paper Showcase
         </h1>
         <p className="mt-3 text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">

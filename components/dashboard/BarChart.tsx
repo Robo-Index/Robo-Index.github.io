@@ -14,7 +14,7 @@ export default function BarChart({ items, maxItems = 15 }: {
           </span>
           <div className="flex-1 h-5 sm:h-6 bg-surface-2 rounded-full overflow-hidden">
             <div
-              className="h-full bg-accent-400 rounded-full"
+              className="h-full bg-gradient-to-r from-accent-400 to-accent-500 rounded-full"
               style={{ width: `${(value / max) * 100}%` }}
             />
           </div>

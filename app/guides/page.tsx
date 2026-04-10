@@ -30,7 +30,7 @@ function Block({ block }: { block: GuideBlock }) {
     case 'quote':
       return (
         <blockquote className="my-5 border-l-[3px] border-accent-300 pl-5 py-2">
-          <p className="text-[13.5px] text-text-secondary leading-[1.85] italic">{block.content}</p>
+          <p className="text-sm text-text-secondary leading-[1.85] italic">{block.content}</p>
         </blockquote>
       )
 
@@ -77,7 +77,7 @@ function Block({ block }: { block: GuideBlock }) {
             <a key={i} href={link.url} target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-3 px-5 py-3 hover:bg-surface-2/60 transition-colors group">
               <span className="text-accent-400 font-mono text-xs font-medium shrink-0">{i + 1}</span>
-              <span className="text-[14px] text-text-primary group-hover:text-accent-600 transition-colors">{link.label}</span>
+              <span className="text-sm text-text-primary group-hover:text-accent-600 transition-colors">{link.label}</span>
               <span className="text-text-muted/40 text-xs ml-auto shrink-0 group-hover:text-text-muted transition-colors">↗</span>
             </a>
           ))}
@@ -93,7 +93,7 @@ function Block({ block }: { block: GuideBlock }) {
             ? 'bg-accent-500/10 border border-accent-500/20'
             : 'bg-accent-500/5 border border-accent-200/30'
         }`}>
-          <div className="text-[14.5px] text-text-primary leading-[1.85] whitespace-pre-line">
+          <div className="text-sm text-text-primary leading-[1.85] whitespace-pre-line">
             <Md text={block.content || ''} />
           </div>
         </div>
@@ -105,11 +105,11 @@ function Block({ block }: { block: GuideBlock }) {
         <div className="my-5 grid gap-2.5">
           <div className="flex items-start gap-3 px-4 py-3 rounded-lg bg-accent-500/5 border border-accent-200/30">
             <span className="text-accent-600 mt-0.5 shrink-0">✓</span>
-            <p className="text-[14px] text-text-primary leading-[1.75]"><Md text={block.good || ''} /></p>
+            <p className="text-sm text-text-primary leading-[1.75]"><Md text={block.good || ''} /></p>
           </div>
           <div className="flex items-start gap-3 px-4 py-3 rounded-lg bg-surface-2 border border-border-light">
             <span className="text-text-muted mt-0.5 shrink-0">✗</span>
-            <p className="text-[14px] text-text-primary leading-[1.75]"><Md text={block.bad || ''} /></p>
+            <p className="text-sm text-text-primary leading-[1.75]"><Md text={block.bad || ''} /></p>
           </div>
           {block.note && <p className="text-[13px] text-text-muted leading-relaxed px-1">{block.note}</p>}
         </div>
@@ -142,7 +142,7 @@ function PhaseSection({ phase, index }: { phase: GuidePhase; index: number }) {
           {phaseLabels[index] || `Phase ${index + 1}`}
         </div>
         <div>
-          <h2 className="text-xl font-bold text-text-primary tracking-tight">{phase.title}</h2>
+          <h2 className="font-serif text-xl sm:text-2xl font-normal text-text-primary tracking-tight">{phase.title}</h2>
           <p className="text-[13px] text-text-muted mt-0.5">{phase.subtitle}</p>
         </div>
       </div>
@@ -172,10 +172,10 @@ export default function GuidesPage() {
   }))
 
   return (
-    <main className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <main className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       {/* Hero */}
-      <header className="mb-14 max-w-2xl">
-        <h1 className="text-3xl font-bold tracking-tight text-text-primary mb-3">{guide.title}</h1>
+      <header className="mb-14 max-w-2xl fade-in-up">
+        <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-text-primary mb-3">{guide.title}</h1>
         <p className="text-[15px] text-text-secondary leading-relaxed mb-5">{guide.description}</p>
         <div className="flex items-center gap-3 text-[13px] text-text-muted">
           <a href={guide.author_url} className="font-medium text-text-primary hover:text-accent-600 transition-colors"
