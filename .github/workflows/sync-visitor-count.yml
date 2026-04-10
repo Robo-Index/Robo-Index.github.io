@@ -12,6 +12,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: dev
 
       - name: Fetch GoatCounter count
         run: |
