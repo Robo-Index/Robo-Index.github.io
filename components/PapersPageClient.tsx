@@ -51,7 +51,7 @@ export default function PapersPageClient({
 
   return (
     <div>
-      <div className="bg-surface-1 rounded-2xl border border-border-light p-6">
+      <div className="bg-surface-1 rounded-2xl border border-border-light p-4 sm:p-6">
         <input
           type="text"
           placeholder="Search papers by title or abstract..."
@@ -60,11 +60,11 @@ export default function PapersPageClient({
           className="w-full px-4 py-3 text-sm bg-surface-0 border border-border rounded-xl focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-100 transition-all duration-200 placeholder:text-text-muted"
         />
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-3 flex flex-col sm:flex-row sm:flex-wrap gap-2">
           <select
             value={selectedVenue}
             onChange={e => setSelectedVenue(e.target.value)}
-            className="text-sm px-3 py-2 border border-border rounded-xl bg-surface-0 text-text-secondary focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-100 transition-all duration-200"
+            className="w-full sm:w-auto text-sm px-3 py-2 border border-border rounded-xl bg-surface-0 text-text-secondary focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-100 transition-all duration-200"
           >
             <option value="">All venues</option>
             {allVenues.map(v => (
@@ -74,7 +74,7 @@ export default function PapersPageClient({
           <select
             value={selectedYear}
             onChange={e => setSelectedYear(e.target.value ? Number(e.target.value) : '')}
-            className="text-sm px-3 py-2 border border-border rounded-xl bg-surface-0 text-text-secondary focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-100 transition-all duration-200"
+            className="w-full sm:w-auto text-sm px-3 py-2 border border-border rounded-xl bg-surface-0 text-text-secondary focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-100 transition-all duration-200"
           >
             <option value="">All years</option>
             {allYears.map(y => (
@@ -89,7 +89,7 @@ export default function PapersPageClient({
                 setSelectedVenue('')
                 setSelectedYear('')
               }}
-              className="text-sm px-3 py-2 text-accent-600 hover:text-accent-700 transition-colors duration-200"
+              className="text-sm px-3 py-2 text-accent-600 hover:text-accent-700 transition-colors duration-200 text-left sm:text-center"
             >
               Clear all
             </button>
