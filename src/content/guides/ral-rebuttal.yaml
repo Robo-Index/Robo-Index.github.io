@@ -1,47 +1,47 @@
-title: "RAL Rebuttal 策略"
-title_en: "RAL Rebuttal Strategies"
+title: "RAL Rebuttal Strategies"
+title_zh: "RAL Rebuttal 策略"
 category: rebuttal
 venue: RA-L
 sections:
-  - heading: "Rebuttal 流程"
-    heading_en: "Rebuttal Workflow"
+  - heading: "Rebuttal Workflow"
+    heading_zh: "Rebuttal 流程"
     items:
-      - text: "收到 Revise and Resubmit 意味着 AE 认可你的工作"
-        text_en: "Receiving 'Revise and Resubmit' means the AE recognizes your work"
+      - text: "Receiving 'Revise and Resubmit' means the AE recognizes your work"
+        text_zh: "收到 Revise and Resubmit 意味着 AE 认可你的工作"
         source: guide
-      - text: "30 天修改期，临近截止 5 天前有邮件提醒"
-        text_en: "30-day revision window, email reminder 5 days before deadline"
+      - text: "30-day revision window, email reminder 5 days before deadline"
+        text_zh: "30 天修改期，临近截止 5 天前有邮件提醒"
         source: guide
-      - text: "提交 revision 后 AE 一般 1~2 周内回复"
-        text_en: "AE typically responds within 1-2 weeks after revision submission"
+      - text: "AE typically responds within 1-2 weeks after revision submission"
+        text_zh: "提交 revision 后 AE 一般 1~2 周内回复"
         source: guide
 
-  - heading: "提交内容"
-    heading_en: "What to Submit"
+  - heading: "What to Submit"
+    heading_zh: "提交内容"
     items:
-      - text: "Response to Reviewers（逐条回复）+ 标记修改的稿件 + 干净稿件"
-        text_en: "Response to Reviewers (point-by-point) + marked manuscript + clean manuscript"
+      - text: "Response to Reviewers (point-by-point) + marked manuscript + clean manuscript"
+        text_zh: "Response to Reviewers（逐条回复）+ 标记修改的稿件 + 干净稿件"
         source: guide
-      - text: "仍然需要 cover letter"
-        text_en: "Cover letter is still required"
+      - text: "Cover letter is still required"
+        text_zh: "仍然需要 cover letter"
         source: guide
 
-  - heading: "回复技巧"
-    heading_en: "Response Tips"
+  - heading: "Response Tips"
+    heading_zh: "回复技巧"
     items:
-      - text: "对每个 reviewer 的每个 comment 逐条 one-by-one 回复"
-        text_en: "Respond to every comment one-by-one for each reviewer"
+      - text: "Respond to every comment one-by-one for each reviewer"
+        text_zh: "对每个 reviewer 的每个 comment 逐条 one-by-one 回复"
         source: guide
-      - text: "能改的尽量改，无法改的给出充分理由"
-        text_en: "Fix what you can, provide solid reasoning for what you can't"
+      - text: "Fix what you can, provide solid reasoning for what you can't"
+        text_zh: "能改的尽量改，无法改的给出充分理由"
         source: community
 
-  - heading: "审稿周期经验"
-    heading_en: "Review Cycle Experience"
+  - heading: "Review Cycle Experience"
+    heading_zh: "审稿周期经验"
     items:
-      - text: "审稿时间长短不影响最终结果"
-        text_en: "Review duration doesn't affect the final outcome"
+      - text: "Review duration doesn't affect the final outcome"
+        text_zh: "审稿时间长短不影响最终结果"
         source: community
-      - text: "超过 3 个月可以礼貌邮件催审，不会被拒"
-        text_en: "Politely follow up after 3 months — it won't get you rejected"
+      - text: "Politely follow up after 3 months — it won't get you rejected"
+        text_zh: "超过 3 个月可以礼貌邮件催审，不会被拒"
         source: community

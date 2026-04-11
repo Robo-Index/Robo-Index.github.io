@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import yaml from 'yaml'
+import type { Locale } from '@/src/lib/i18n'
 
 const GUIDES_DIR = path.join(process.cwd(), 'src/content/guides')
 
@@ -37,9 +38,29 @@ export interface FullGuide {
   phases: GuidePhase[]
 }
 
-export function getFullGuide(): FullGuide | null {
-  const filePath = path.join(GUIDES_DIR, 'ral-guide.yaml')
-  if (!fs.existsSync(filePath)) return null
-  const content = fs.readFileSync(filePath, 'utf-8')
-  return yaml.parse(content)
+function readLocalizedYaml(baseName: string, lang: Locale) {
+  const requestedPath = path.join(GUIDES_DIR, `${baseName}.${lang}.yaml`)
+  if (fs.existsSync(requestedPath)) {
+    return {
+      data: yaml.parse(fs.readFileSync(requestedPath, 'utf-8')),
+      isFallback: false,
+    }
+  }
+
+  const fallbackPath = path.join(GUIDES_DIR, `${baseName}.en.yaml`)
+  if (!fs.existsSync(fallbackPath)) return null
+
+  return {
+    data: yaml.parse(fs.readFileSync(fallbackPath, 'utf-8')),
+    isFallback: lang !== 'en',
+  }
+}
+
+export function getFullGuide(lang: Locale): { guide: FullGuide | null; isFallback: boolean } {
+  const result = readLocalizedYaml('ral-guide', lang)
+  if (!result) {
+    return { guide: null, isFallback: false }
+  }
+
+  return { guide: result.data as FullGuide, isFallback: result.isFallback }
 }

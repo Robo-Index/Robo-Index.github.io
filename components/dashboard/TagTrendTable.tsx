@@ -1,6 +1,14 @@
 import type { Paper } from '@/src/lib/types'
 
-export default function TagTrendTable({ papers }: { papers: Paper[] }) {
+export default function TagTrendTable({
+  papers,
+  tagLabel,
+  trendLabel,
+}: {
+  papers: Paper[]
+  tagLabel: string
+  trendLabel: string
+}) {
   // Build tag → year → count matrix
   const matrix: Record<string, Record<number, number>> = {}
   for (const p of papers) {
@@ -47,11 +55,11 @@ export default function TagTrendTable({ papers }: { papers: Paper[] }) {
       <table className="w-full text-sm">
         <thead>
           <tr className="text-text-muted">
-            <th className="text-left font-medium py-2 pr-4">Tag</th>
+            <th className="text-left font-medium py-2 pr-4">{tagLabel}</th>
             {years.map(y => (
               <th key={y} className="font-medium py-2 px-3 text-center tabular-nums">{y}</th>
             ))}
-            <th className="font-medium py-2 pl-3 text-center">Trend</th>
+            <th className="font-medium py-2 pl-3 text-center">{trendLabel}</th>
           </tr>
         </thead>
         <tbody>

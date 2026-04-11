@@ -1,17 +1,29 @@
 import Link from 'next/link'
 import type { Paper } from '@/src/lib/types'
+import type { Locale } from '@/src/lib/i18n'
+import { getLocalizedText, withLocale } from '@/src/lib/i18n'
 
-export default function PaperCard({ paper }: { paper: Paper }) {
+export default function PaperCard({
+  paper,
+  lang,
+  codeLabel,
+}: {
+  paper: Paper
+  lang: Locale
+  codeLabel: string
+}) {
   const repoShort = paper.repo?.replace('https://github.com/', '') || ''
   const maxTags = 3
+  const title = getLocalizedText(paper.title, paper.title_zh, lang)
+  const abstract = getLocalizedText(paper.abstract, paper.abstract_zh, lang)
 
   return (
-    <Link href={`/papers/${paper.slug}`} className="block group">
+    <Link href={withLocale(lang, `/papers/${paper.slug}`)} className="block group">
       <article className="bg-surface-1 rounded-2xl border border-border-light p-4 sm:p-5 transition-all duration-200 hover:shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:-translate-y-0.5 overflow-hidden break-words">
         {/* Title + year */}
         <div className="flex items-start justify-between gap-2 mb-2">
           <h3 className="text-sm sm:text-[15px] font-semibold text-text-primary group-hover:text-accent-600 transition-colors leading-snug line-clamp-2">
-            {paper.title}
+            {title}
           </h3>
           <span className="shrink-0 text-[10px] sm:text-xs font-mono text-text-muted bg-surface-2 px-1.5 py-0.5 rounded">
             {paper.year}
@@ -19,9 +31,9 @@ export default function PaperCard({ paper }: { paper: Paper }) {
         </div>
 
         {/* Abstract */}
-        {paper.abstract && (
+        {abstract && (
           <p className="text-xs sm:text-[13px] text-text-secondary leading-relaxed line-clamp-2 mb-3 break-words">
-            {paper.abstract}
+            {abstract}
           </p>
         )}
 
@@ -46,7 +58,7 @@ export default function PaperCard({ paper }: { paper: Paper }) {
             <span className="text-[10px] text-text-muted font-medium px-1.5 py-0.5 rounded border border-border-light">arXiv</span>
           )}
           {paper.repo && (
-            <span className="text-[10px] text-text-muted font-medium px-1.5 py-0.5 rounded border border-border-light">Code</span>
+            <span className="text-[10px] text-text-muted font-medium px-1.5 py-0.5 rounded border border-border-light">{codeLabel}</span>
           )}
         </div>
       </article>

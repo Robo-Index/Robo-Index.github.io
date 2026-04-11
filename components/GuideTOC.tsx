@@ -9,7 +9,15 @@ interface TOCNode {
   children: { id: string; label: string }[]
 }
 
-export default function GuideTOC({ nodes }: { nodes: TOCNode[] }) {
+export default function GuideTOC({
+  nodes,
+  expandLabel,
+  collapseLabel,
+}: {
+  nodes: TOCNode[]
+  expandLabel: string
+  collapseLabel: string
+}) {
   const [activeId, setActiveId] = useState('')
   const [expanded, setExpanded] = useState<Record<string, boolean>>(() => {
     const init: Record<string, boolean> = {}
@@ -65,7 +73,7 @@ export default function GuideTOC({ nodes }: { nodes: TOCNode[] }) {
                   <button
                     onClick={() => toggle(node.id)}
                     className="w-5 h-5 flex items-center justify-center text-text-muted/50 hover:text-text-muted shrink-0"
-                    aria-label={open ? 'Collapse' : 'Expand'}
+                    aria-label={open ? collapseLabel : expandLabel}
                   >
                     <svg width="10" height="10" viewBox="0 0 10 10" className={`transition-transform duration-200 ${open ? 'rotate-90' : ''}`}>
                       <path d="M3 1l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

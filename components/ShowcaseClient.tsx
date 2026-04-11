@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import type { Paper } from '@/src/lib/types'
 import type { RepoMeta } from '@/src/lib/types'
+import type { Locale } from '@/src/lib/i18n'
 import ShowcaseCard from './ShowcaseCard'
 import TagPill from './TagPill'
 
@@ -13,11 +14,35 @@ export default function ShowcaseClient({
   allTags,
   allYears,
   repoMeta,
+  lang,
+  copy,
 }: {
   papers: Paper[]
   allTags: string[]
   allYears: number[]
   repoMeta: Record<string, RepoMeta>
+  lang: Locale
+  copy: {
+    searchPlaceholder: string
+    allYears: string
+    sortDefault: string
+    sortStars: string
+    sortActive: string
+    sortRecent: string
+    clearAll: string
+    paperSingular: string
+    paperPlural: string
+    foundSuffix: string
+    noMatches: string
+    clearFilters: string
+    details: string
+    project: string
+    today: string
+    daysAgo: string
+    monthsAgo: string
+    yearsAgo: string
+    lastPushed: string
+  }
 }) {
   const [query, setQuery] = useState('')
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set())
@@ -28,8 +53,8 @@ export default function ShowcaseClient({
     let results = papers.filter(p => {
       if (query) {
         const q = query.toLowerCase()
-        const inTitle = p.title.toLowerCase().includes(q)
-        const inAbstract = p.abstract?.toLowerCase().includes(q)
+        const inTitle = p.title.toLowerCase().includes(q) || p.title_zh?.toLowerCase().includes(q)
+        const inAbstract = p.abstract?.toLowerCase().includes(q) || p.abstract_zh?.toLowerCase().includes(q)
         const inRepo = p.repo?.toLowerCase().includes(q)
         if (!inTitle && !inAbstract && !inRepo) return false
       }
@@ -76,7 +101,7 @@ export default function ShowcaseClient({
       <div className="bg-surface-1 rounded-2xl border border-border-light p-5">
         <input
           type="text"
-          placeholder="Search by title, abstract, or repo..."
+          placeholder={copy.searchPlaceholder}
           value={query}
           onChange={e => setQuery(e.target.value)}
           className="w-full px-4 py-3 text-sm bg-surface-0 border border-border rounded-xl focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-100 transition-all duration-200 placeholder:text-text-muted"
@@ -87,7 +112,7 @@ export default function ShowcaseClient({
             onChange={e => setSelectedYear(e.target.value ? Number(e.target.value) : '')}
             className="text-sm px-3 py-2 border border-border rounded-xl bg-surface-0 text-text-secondary focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-100 transition-all duration-200"
           >
-            <option value="">All years</option>
+            <option value="">{copy.allYears}</option>
             {allYears.map(y => (
               <option key={y} value={y}>{y}</option>
             ))}
@@ -97,10 +122,10 @@ export default function ShowcaseClient({
             onChange={e => setSortBy(e.target.value as SortBy)}
             className="text-sm px-3 py-2 border border-border rounded-xl bg-surface-0 text-text-secondary focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-100 transition-all duration-200"
           >
-            <option value="default">Sort: Default</option>
-            <option value="stars">Most stars</option>
-            <option value="active">Recently active</option>
-            <option value="recent">Recently added</option>
+            <option value="default">{copy.sortDefault}</option>
+            <option value="stars">{copy.sortStars}</option>
+            <option value="active">{copy.sortActive}</option>
+            <option value="recent">{copy.sortRecent}</option>
           </select>
           {hasFilters && (
             <button
@@ -109,9 +134,9 @@ export default function ShowcaseClient({
                 setSelectedTags(new Set())
                 setSelectedYear('')
               }}
-              className="text-sm px-3 py-2 text-accent-600 hover:text-accent-700 transition-colors duration-200"
-            >
-              Clear all
+            className="text-sm px-3 py-2 text-accent-600 hover:text-accent-700 transition-colors duration-200"
+          >
+              {copy.clearAll}
             </button>
           )}
         </div>
@@ -129,13 +154,13 @@ export default function ShowcaseClient({
 
       {/* Results */}
       <div className="mt-5 text-sm text-text-muted">
-        {filtered.length} {filtered.length === 1 ? 'paper' : 'papers'}
-        {hasFilters && ' found'}
+        {filtered.length} {filtered.length === 1 ? copy.paperSingular : copy.paperPlural}
+        {hasFilters && ` ${copy.foundSuffix}`}
       </div>
 
       {filtered.length === 0 ? (
         <div className="mt-12 text-center">
-          <p className="text-text-muted">No papers match your filters.</p>
+          <p className="text-text-muted">{copy.noMatches}</p>
           <button
             onClick={() => {
               setQuery('')
@@ -144,13 +169,13 @@ export default function ShowcaseClient({
             }}
             className="mt-3 text-sm text-accent-600 hover:text-accent-700"
           >
-            Clear filters
+            {copy.clearFilters}
           </button>
         </div>
       ) : (
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
           {filtered.map(paper => (
-            <ShowcaseCard key={paper.slug} paper={paper} meta={repoMeta[paper.slug]} />
+            <ShowcaseCard key={paper.slug} paper={paper} meta={repoMeta[paper.slug]} lang={lang} copy={copy} />
           ))}
         </div>
       )}

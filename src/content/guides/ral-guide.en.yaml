@@ -1,0 +1,216 @@
+title: "RA-L Submission Guide"
+author: "Ce Hao"
+author_url: "https://github.com/CeHao1"
+updated: "2026-02-18"
+description: "A practical guide to help authors submit to RA-L more smoothly, from journal positioning to final publication. This reflects personal experience rather than official policy."
+
+phases:
+  - id: phase-1
+    title: "Before Submission"
+    subtitle: "Understand the journal, prepare the paper, and finish the initial submission"
+    chapters:
+      - id: positioning
+        title: "Journal Positioning and Venue Choice"
+        blocks:
+          - type: text
+            content: "According to the official description of IEEE Robotics and Automation Letters (RA-L):"
+          - type: quote
+            content: "The scope of this journal is to publish peer-reviewed articles that provide a timely and concise account of innovative research ideas and application results, reporting significant theoretical findings and application case studies in areas of robotics and automation."
+          - type: text
+            content: "In practice, this means:"
+          - type: list
+            items:
+              - "RA-L is a **letter journal**, not a full-length journal."
+              - "Its scope covers **robotics and automation**."
+              - "It welcomes **theory, algorithms, systems, and application** contributions."
+              - "The manuscript is limited to **8 double-column pages total**, typically 7 pages of main text plus 1 page of references, with no appendix."
+              - "It is **open year-round**, with a publication cycle of about five months."
+          - type: heading
+            content: "Journal taste: what kind of paper fits RA-L?"
+          - type: text
+            content: "RAS venues care about **real robotics problems**. It is usually better to tell the story from the robotics problem rather than from the AI method."
+          - type: compare
+            good: "A robotics task is hard and existing SOTA methods have low success rates → start from the **robotics problem**."
+            bad: "An AI method works well elsewhere but is still not strong enough on this robotics task → start from the **AI method**."
+            note: "These two framings can describe almost the same work, but the first one matches RA-L's taste better."
+          - type: text
+            content: "RA-L is a good fit for papers with a **clear story and precise contribution**. If the system is not yet large enough, RA-L can be better than RSS; for a fully integrated large system, RSS may be a better target."
+          - type: heading
+            content: "Impact reference"
+          - type: text
+            content: "One personal estimate of relative impact in robotics is:"
+          - type: list
+            items:
+              - "**RSS = 1.2× RAL/CoRL = 1.7× ICRA = 2.5× IROS**"
+              - "RA-L sits between ICRA/IROS and a long-form journal like TRO."
+          - type: heading
+            content: "How to choose between RA-L and ICRA?"
+          - type: list
+            items:
+              - "If the paper is **already quite complete**, RA-L is attractive because you get a rebuttal chance and stronger papers are often easier to push through."
+              - "If the paper is **still somewhat incomplete**, ICRA can be more suitable. There is no rebuttal, so results are more stochastic, but some incomplete papers still get in."
+
+      - id: formatting
+        title: "Writing and Formatting Requirements"
+        blocks:
+          - type: heading
+            content: "Initial submission basics"
+          - type: list
+            items:
+              - "Use the **ieee conf template**. The trans template is for the final version."
+              - "Submit **anonymously** under double-blind review. Do not include author information in the paper."
+              - "The manuscript plus references is limited to **8 pages** total. Pages beyond 6 cost $175 each."
+              - "There is **no appendix**. Uploading extra text material can trigger a desk rejection."
+              - "You may submit **multimedia material** such as videos or code, but not an appendix."
+          - type: callout
+            variant: warning
+            content: "**Do not put website or video links directly in the paper.** In the best case the editor asks you to remove them; in the worst case you get desk rejected."
+          - type: heading
+            content: "Formatting details"
+          - type: list
+            items:
+              - "Do not overflow the page boundary or exceed the page limit, otherwise the system may reject the upload."
+              - "If space is tight, reduce spacing with `\\vspace`, and use `\\small` or `\\tiny` for equations when necessary."
+              - "**Never change the page margins.**"
+              - "Both PDF and video uploads have size limits. Compress the PDF with Acrobat when needed, and prefer PDF images because they are often sharper and smaller."
+
+      - id: links
+        title: "Important Links"
+        blocks:
+          - type: links
+            items:
+              - label: "RA-L official website"
+                url: "https://www.ieee-ras.org/publications/ra-l/"
+              - label: "RAS submission system (PaperCept)"
+                url: "https://ras.papercept.net/conferences/scripts/login.pl"
+              - label: "Initial submission template (ieee conf)"
+                url: "http://ras.papercept.net/conferences/support/files/ieeeconf.zip"
+              - label: "Final version template (ieee trans)"
+                url: "https://template-selector.ieee.org/secure/templateSelector/downloadTemplate?publicationTypeId=1&titleId=33&articleId=3&fileId=43"
+              - label: "RAS membership registration"
+                url: "https://www.ieee.org/membership-catalog/productdetail/showProductDetailPage.html?product=PER481-ELE"
+
+      - id: submission
+        title: "Initial Submission Checklist"
+        blocks:
+          - type: text
+            content: "Everything is handled through the **RAS PaperCept system**, not the general IEEE system."
+          - type: callout
+            variant: warning
+            content: |
+              **About the corresponding author in the system:**
+              · The account used to submit the paper becomes the corresponding author marked by the system.
+              · The system-level corresponding author is **not** necessarily the final corresponding author in the published paper.
+              · **Do not submit using your advisor's account.** Otherwise all later operations will depend on that account.
+          - type: heading
+            content: "Submission tips"
+          - type: list
+            items:
+              - "Do not choose the **Editor-in-Chief** blindly. Check their Google Scholar profile and understand their area."
+              - "If **keywords** are hard to choose, you can use GPT for suggestions, then verify them yourself."
+              - "**Write a cover letter.** It affects how the AE assigns reviewers."
+              - "Conference-to-RA-L transfer is usually **not recommended** if the work is still short. Two or three conference papers can often be combined into a stronger long-form journal paper later."
+
+  - id: phase-2
+    title: "Review and Revision"
+    subtitle: "Wait for the decision, respond to reviews, and finish the revision"
+    chapters:
+      - id: timeline
+        title: "Review Timeline"
+        blocks:
+          - type: steps
+            items:
+              - "After submission, the first review round usually takes about **2.5 to 3 months**. Desk rejections may come faster."
+              - "After receiving **Revise and Resubmit**, you get **30 days** for revision."
+              - "After you submit the revision, the AE often replies within **1 to 2 weeks**."
+          - type: text
+            content: "Sometimes the AE may request multiple rounds of rebuttal, each with another one-month revision window."
+
+      - id: rebuttal
+        title: "Rebuttal Strategy"
+        blocks:
+          - type: text
+            content: "About three months after submission, you will receive the decision email. If the result is **Revise and Resubmit**, that is already a good sign: the AE believes the work is worth continuing. You then have 30 days to revise, with a reminder email about five days before the deadline."
+          - type: heading
+            content: "What to submit"
+          - type: list
+            ordered: true
+            items:
+              - "**Response to Reviewers** (Statement of Changes), with point-by-point replies."
+              - "**Marked manuscript**, with all changes highlighted."
+              - "**Clean manuscript**, the final revised version."
+              - "**Cover letter**, still required at this stage."
+          - type: heading
+            content: "Response tips"
+          - type: list
+            items:
+              - "Reply **one by one** to every reviewer comment."
+              - "According to the official guidance, you may **update the title and author list** when needed."
+
+  - id: phase-3
+    title: "After Acceptance"
+    subtitle: "Camera-ready, payment, publication, and conference transfer"
+    chapters:
+      - id: final-version
+        title: "Final Version Submission"
+        blocks:
+          - type: callout
+            variant: warning
+            content: "After acceptance, you must complete the camera-ready submission within **14 days**. This is a hard deadline. If you miss it, the paper may not be published."
+          - type: heading
+            content: "Reference links"
+          - type: links
+            items:
+              - label: "Submission of final materials"
+                url: "https://www.ieee-ras.org/publications/ra-l/submission-procedures/"
+              - label: "Final submission checklist"
+                url: "https://www.ieee-ras.org/publications/ra-l/final-submission-checklist/"
+              - label: "Manuscript preparation guidance"
+                url: "https://www.ieee-ras.org/publications/ra-l/ra-l-information-for-authors/"
+          - type: heading
+            content: "Camera-ready checklist"
+          - type: list
+            ordered: true
+            items:
+              - "Switch to the **ieee trans template**. It is safer to copy the project into a new LaTeX workspace rather than editing the original one in place."
+              - "Download every file from Overleaf and upload them into the new template project, except for the template's own cls file."
+              - "**Add author information** and the author biography block at the lower left. Put acknowledgements before the references."
+              - "The trans layout is roomier than conf, so most papers fit. If it still overflows, adjust spacing or figure sizes; the editor may also help later."
+              - "Approximate date information is fine. The editor will usually help check it."
+          - type: text
+            content: "You then sign the copyright form, which requires a DOI, and upload both the final PDF and the source files."
+          - type: callout
+            variant: warning
+            content: |
+              **When communicating with the editor:**
+              · The editor will check and confirm the title, abstract, and author information with you.
+              · After typesetting, you need to **confirm that the content is correct**.
+              · **Replace arXiv citations with formal publication information.** Search dblp.org first; if the result is not indexed yet, tell the editor directly.
+
+      - id: fees
+        title: "Fees"
+        blocks:
+          - type: list
+            items:
+              - "RA-L provides a dedicated payment system."
+              - "**Open access** is optional. In many cases, posting the paper on arXiv is already sufficient."
+              - "Pages beyond 6 cost **$175 each**, paid by Visa or MasterCard."
+
+      - id: publication
+        title: "Publication"
+        blocks:
+          - type: text
+            content: "After payment, IEEE will first release an **early access** version. The paper is then assigned to a nearby issue, often in the following month."
+
+      - id: transfer
+        title: "Conference Transfer"
+        blocks:
+          - type: callout
+            variant: tip
+            content: "You can start the transfer process in the RAS system **immediately after acceptance**. There is no need to wait for payment or formal publication."
+          - type: list
+            items:
+              - "Check the official **Upcoming conferences** page for eligible venues and deadlines."
+              - "Transferred conference papers **do not go through another review round**. They are directly accepted."
+              - "You still need to pay the **conference registration fee**, and a student registration usually covers only one paper."
+              - "RA-L promises publication within **6 months** of submission."

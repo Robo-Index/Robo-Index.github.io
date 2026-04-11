@@ -13,10 +13,12 @@ function parsePaper(file: string): Paper {
   return {
     slug,
     title: data.title,
+    title_zh: data.title_zh,
     venue: data.venue,
     year: data.year,
     authors: data.authors || [],
     abstract: data.abstract,
+    abstract_zh: data.abstract_zh,
     tags: data.tags || [],
     repo: data.repo,
     project_page: data.project_page,

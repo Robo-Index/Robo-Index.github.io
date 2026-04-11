@@ -1,17 +1,33 @@
 'use client'
 
-interface Stage {
-  name: string
-  name_en?: string
-  duration_min: number
-  duration_max: number
-  source: 'official' | 'guide' | 'community'
-  note?: string
-}
+import type { Locale } from '@/src/lib/i18n'
+import { getLocalizedText } from '@/src/lib/i18n'
+import type { TimelineStage } from '@/src/lib/types'
 
-export default function SubmissionTimeline({ stages }: { stages: Stage[] }) {
+export default function SubmissionTimeline({
+  stages,
+  lang,
+  copy,
+}: {
+  stages: TimelineStage[]
+  lang: Locale
+  copy: {
+    title: string
+    summary: string
+    days: string
+    fromSubmission: string
+    dataFrom: string
+  }
+}) {
   const totalMin = stages.reduce((s, st) => s + st.duration_min, 0)
   const totalMax = stages.reduce((s, st) => s + st.duration_max, 0)
+
+  function format(template: string, values: Record<string, number>) {
+    return Object.entries(values).reduce(
+      (result, [key, value]) => result.replace(`{${key}}`, String(value)),
+      template,
+    )
+  }
 
   // Accumulate days for milestone labels
   let accMin = 0
@@ -25,16 +41,19 @@ export default function SubmissionTimeline({ stages }: { stages: Stage[] }) {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-text-primary mb-1">RA-L Submission Timeline</h2>
+      <h2 className="text-lg font-semibold text-text-primary mb-1">{copy.title}</h2>
       <p className="text-sm text-text-muted mb-8">
-        Total ~{Math.round(totalMin / 30)}–{Math.round(totalMax / 30)} months · Official guarantee ≤ 6 months
+        {format(copy.summary, {
+          min: Math.round(totalMin / 30),
+          max: Math.round(totalMax / 30),
+        })}
       </p>
 
       <div className="relative ml-4 sm:ml-8">
         {milestones.map((m, i) => {
           const days = m.duration_min === m.duration_max
-            ? `${m.duration_min} days`
-            : `${m.duration_min}–${m.duration_max} days`
+            ? `${m.duration_min} ${copy.days.replace('{min}–{max} ', '').replace('{min}', '').replace('{max}', '')}`
+            : format(copy.days, { min: m.duration_min, max: m.duration_max })
           const isLast = i === milestones.length - 1
 
           return (
@@ -54,10 +73,12 @@ export default function SubmissionTimeline({ stages }: { stages: Stage[] }) {
                 {/* Content */}
                 <div className="flex-1 min-w-0 -mt-0.5">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-sm font-semibold text-text-primary">{m.name}</span>
-                    {m.note && (
+                    <span className="text-sm font-semibold text-text-primary">
+                      {getLocalizedText(m.name, m.name_zh, lang)}
+                    </span>
+                    {getLocalizedText(m.note || '', m.note_zh, lang) && (
                       <span className="text-[10px] font-semibold text-accent-600 bg-accent-500/10 px-1.5 py-0.5 rounded">
-                        {m.note}
+                        {getLocalizedText(m.note || '', m.note_zh, lang)}
                       </span>
                     )}
                   </div>
@@ -79,7 +100,7 @@ export default function SubmissionTimeline({ stages }: { stages: Stage[] }) {
                   )}
                   {isLast && (
                     <p className="mt-1 text-[11px] text-text-muted">
-                      ~Day {m.end.min}–{m.end.max} from submission
+                      {format(copy.fromSubmission, { min: m.end.min, max: m.end.max })}
                     </p>
                   )}
                 </div>
@@ -90,7 +111,8 @@ export default function SubmissionTimeline({ stages }: { stages: Stage[] }) {
       </div>
 
       <div className="mt-6 pt-4 border-t border-border-light text-xs text-text-muted">
-        Data from <a href="https://github.com/fly-pigTH/ral-skill" className="text-accent-500 hover:underline" target="_blank" rel="noopener noreferrer">ral.skill</a>
+        {copy.dataFrom}{' '}
+        <a href="https://github.com/fly-pigTH/ral-skill" className="text-accent-500 hover:underline" target="_blank" rel="noopener noreferrer">ral.skill</a>
       </div>
     </div>
   )

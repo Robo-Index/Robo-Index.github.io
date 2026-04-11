@@ -1,59 +1,59 @@
-title: "RAL 投稿常见坑点"
-title_en: "RAL Common Pitfalls"
+title: "RAL Common Pitfalls"
+title_zh: "RAL 投稿常见坑点"
 category: format
 venue: RA-L
 sections:
-  - heading: "会被 Desk Reject 的操作"
-    heading_en: "Desk Rejection Triggers"
+  - heading: "Desk Rejection Triggers"
+    heading_zh: "会被 Desk Reject 的操作"
     items:
-      - text: "论文中放网页链接或视频链接"
-        text_en: "Including web or video links in the paper"
+      - text: "Including web or video links in the paper"
+        text_zh: "论文中放网页链接或视频链接"
         source: guide
-      - text: "上传 appendix 或额外文字补充材料"
-        text_en: "Uploading appendix or supplementary text"
+      - text: "Uploading appendix or supplementary text"
+        text_zh: "上传 appendix 或额外文字补充材料"
         source: guide
-      - text: "放匿名链接（部分 AE 会直接 reject）"
-        text_en: "Including anonymous links (some AEs reject immediately)"
+      - text: "Including anonymous links (some AEs reject immediately)"
+        text_zh: "放匿名链接（部分 AE 会直接 reject）"
         source: community
 
-  - heading: "格式踩雷"
-    heading_en: "Formatting Traps"
+  - heading: "Formatting Traps"
+    heading_zh: "格式踩雷"
     items:
-      - text: "初稿使用 ieee trans 模板（应该用 conf 模板）"
-        text_en: "Using trans template for initial submission (should use conf)"
+      - text: "Using trans template for initial submission (should use conf)"
+        text_zh: "初稿使用 ieee trans 模板（应该用 conf 模板）"
         source: guide
-      - text: "调整页面 margin"
-        text_en: "Adjusting page margins"
+      - text: "Adjusting page margins"
+        text_zh: "调整页面 margin"
         source: guide
-      - text: "PDF 超过 8 页，系统不允许上传"
-        text_en: "PDF over 8 pages — system won't accept it"
+      - text: "PDF over 8 pages — system won't accept it"
+        text_zh: "PDF 超过 8 页，系统不允许上传"
         source: official
         url: "https://www.ieee-ras.org/publications/ra-l/final-submission-checklist/"
 
-  - heading: "投稿系统"
-    heading_en: "Submission System"
+  - heading: "Submission System"
+    heading_zh: "投稿系统"
     items:
-      - text: "提交者账号 = 系统通讯作者。不要用老板账号提交"
-        text_en: "Submitter account = system corresponding author. Don't use your advisor's account"
+      - text: "Submitter account = system corresponding author. Don't use your advisor's account"
+        text_zh: "提交者账号 = 系统通讯作者。不要用老板账号提交"
         source: guide
-      - text: "所有操作在 RAS PaperCept 完成，不是 IEEE 系统"
-        text_en: "All operations on RAS PaperCept, not the IEEE system"
+      - text: "All operations on RAS PaperCept, not the IEEE system"
+        text_zh: "所有操作在 RAS PaperCept 完成，不是 IEEE 系统"
         source: guide
 
   - heading: "Final Version"
-    heading_en: "Final Version"
+    heading_zh: "Final Version"
     items:
-      - text: "Accept 后 14 天内完成 camera-ready（hard deadline）"
-        text_en: "14 days after acceptance for camera-ready (hard deadline)"
+      - text: "14 days after acceptance for camera-ready (hard deadline)"
+        text_zh: "Accept 后 14 天内完成 camera-ready（hard deadline）"
         source: official
         url: "https://www.ieee-ras.org/publications/ra-l/final-submission-checklist/"
-      - text: "必须换成 ieee trans 模板"
-        text_en: "Must switch to ieee trans template"
+      - text: "Must switch to ieee trans template"
+        text_zh: "必须换成 ieee trans 模板"
         source: guide
-      - text: "把引用中的 arxiv 换成正式出版信息"
-        text_en: "Replace arxiv citations with published versions"
+      - text: "Replace arxiv citations with published versions"
+        text_zh: "把引用中的 arxiv 换成正式出版信息"
         source: guide
-      - text: "增删作者需通知编辑和 EiC 并说明理由"
-        text_en: "Adding/removing authors requires notifying Editor and EiC with justification"
+      - text: "Adding/removing authors requires notifying Editor and EiC with justification"
+        text_zh: "增删作者需通知编辑和 EiC 并说明理由"
         source: official
         url: "https://www.ieee-ras.org/publications/ra-l/final-submission-checklist/"

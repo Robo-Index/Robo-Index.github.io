@@ -1,58 +1,58 @@
-title: "RAL 写作与投稿要点"
-title_en: "RAL Writing & Submission Tips"
+title: "RAL Writing & Submission Tips"
+title_zh: "RAL 写作与投稿要点"
 category: writing
 venue: RA-L
 sections:
-  - heading: "期刊定位"
-    heading_en: "Journal Positioning"
+  - heading: "Journal Positioning"
+    heading_zh: "期刊定位"
     items:
-      - text: "RAL 是短期刊（letter），适合故事清晰、贡献精准的论文"
-        text_en: "RAL is a letter journal — best for clear stories with precise contributions"
+      - text: "RAL is a letter journal — best for clear stories with precise contributions"
+        text_zh: "RAL 是短期刊（letter），适合故事清晰、贡献精准的论文"
         source: guide
-      - text: "从机器人问题出发讲故事，而不是从 AI 方法出发"
-        text_en: "Frame your story around the robotics problem, not the AI method"
+      - text: "Frame your story around the robotics problem, not the AI method"
+        text_zh: "从机器人问题出发讲故事，而不是从 AI 方法出发"
         source: guide
-      - text: "如果不是纯算法研究，最好有真机实验"
-        text_en: "Include real-robot experiments unless it's purely algorithmic"
+      - text: "Include real-robot experiments unless it's purely algorithmic"
+        text_zh: "如果不是纯算法研究，最好有真机实验"
         source: community
-      - text: "RAL 承诺从提交到发表不超过 6 个月，平均约 4 个月"
-        text_en: "RAL guarantees publication within 6 months, average ~4 months"
+      - text: "RAL guarantees publication within 6 months, average ~4 months"
+        text_zh: "RAL 承诺从提交到发表不超过 6 个月，平均约 4 个月"
         source: official
         url: "https://www.ieee-ras.org/publications/ra-l/"
 
-  - heading: "初稿提交"
-    heading_en: "Initial Submission"
+  - heading: "Initial Submission"
+    heading_zh: "初稿提交"
     items:
-      - text: "使用 ieee conf 模板（不是 trans 模板！）"
-        text_en: "Use ieee conf template (NOT trans — that's for final version)"
+      - text: "Use ieee conf template (NOT trans — that's for final version)"
+        text_zh: "使用 ieee conf 模板（不是 trans 模板！）"
         source: guide
-      - text: "6 页免费，超出每页 $175，最多 8 页"
-        text_en: "6 pages free, $175 per extra page, max 8 pages"
+      - text: "6 pages free, $175 per extra page, max 8 pages"
+        text_zh: "6 页免费，超出每页 $175，最多 8 页"
         source: official
         url: "https://www.ieee-ras.org/publications/ra-l/final-submission-checklist/"
-      - text: "匿名提交（双盲），不要写作者信息"
-        text_en: "Anonymous submission (double-blind)"
+      - text: "Anonymous submission (double-blind)"
+        text_zh: "匿名提交（双盲），不要写作者信息"
         source: guide
-      - text: "不要放外部链接、不要加附录，有 desk reject 风险"
-        text_en: "No external links, no appendix — risk of desk rejection"
+      - text: "No external links, no appendix — risk of desk rejection"
+        text_zh: "不要放外部链接、不要加附录，有 desk reject 风险"
         source: guide
-      - text: "要写 cover letter，关系到 AE 给你分配审稿人"
-        text_en: "Write a cover letter — it affects AE reviewer assignment"
+      - text: "Write a cover letter — it affects AE reviewer assignment"
+        text_zh: "要写 cover letter，关系到 AE 给你分配审稿人"
         source: guide
 
-  - heading: "双盲与引用"
-    heading_en: "Double-Blind & Citations"
+  - heading: "Double-Blind & Citations"
+    heading_zh: "双盲与引用"
     items:
-      - text: "可以引用自己的 arxiv 预印本，只要不说 ours"
-        text_en: "You can cite your own arxiv preprints — just don't say 'ours'"
+      - text: "You can cite your own arxiv preprints — just don't say 'ours'"
+        text_zh: "可以引用自己的 arxiv 预印本，只要不说 ours"
         source: community
-      - text: "RAL 是软双盲，审稿人可能从图风格猜出作者"
-        text_en: "RAL is soft double-blind — reviewers may guess from figure style"
+      - text: "RAL is soft double-blind — reviewers may guess from figure style"
+        text_zh: "RAL 是软双盲，审稿人可能从图风格猜出作者"
         source: community
 
   - heading: "RAL vs ICRA"
-    heading_en: "RAL vs ICRA"
+    heading_zh: "RAL vs ICRA"
     items:
-      - text: "论文完整 → 投 RAL（有 rebuttal 机会）。不太完整 → 投 ICRA"
-        text_en: "Complete paper → RAL (rebuttal chance). Less complete → ICRA"
+      - text: "Complete paper → RAL (rebuttal chance). Less complete → ICRA"
+        text_zh: "论文完整 → 投 RAL（有 rebuttal 机会）。不太完整 → 投 ICRA"
         source: guide

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import type { Paper } from '@/src/lib/types'
 import type { RepoMeta } from '@/src/lib/types'
+import type { Locale } from '@/src/lib/i18n'
+import { getLocalizedText, withLocale } from '@/src/lib/i18n'
 import TagPill from './TagPill'
 
 function repoName(url: string) {
@@ -12,15 +14,24 @@ function formatStars(n: number): string {
   return String(n)
 }
 
-function relativeTime(dateStr: string): string {
+function interpolate(template: string, count: number | string): string {
+  return template.replace('{count}', String(count)).replace('{date}', String(count))
+}
+
+function relativeTime(dateStr: string, copy: {
+  today: string
+  daysAgo: string
+  monthsAgo: string
+  yearsAgo: string
+}): string {
   const diff = Date.now() - new Date(dateStr).getTime()
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-  if (days < 1) return 'today'
-  if (days < 30) return `${days}d ago`
+  if (days < 1) return copy.today
+  if (days < 30) return interpolate(copy.daysAgo, days)
   const months = Math.floor(days / 30)
-  if (months < 12) return `${months}mo ago`
+  if (months < 12) return interpolate(copy.monthsAgo, months)
   const years = Math.floor(months / 12)
-  return `${years}y ago`
+  return interpolate(copy.yearsAgo, years)
 }
 
 // Common GitHub language colors
@@ -44,14 +55,35 @@ const LANG_COLORS: Record<string, string> = {
   CUDA: '#3A4E3A',
 }
 
-export default function ShowcaseCard({ paper, meta }: { paper: Paper; meta?: RepoMeta }) {
+export default function ShowcaseCard({
+  paper,
+  meta,
+  lang,
+  copy,
+}: {
+  paper: Paper
+  meta?: RepoMeta
+  lang: Locale
+  copy: {
+    details: string
+    project: string
+    today: string
+    daysAgo: string
+    monthsAgo: string
+    yearsAgo: string
+    lastPushed: string
+  }
+}) {
+  const title = getLocalizedText(paper.title, paper.title_zh, lang)
+  const abstract = getLocalizedText(paper.abstract, paper.abstract_zh, lang)
+
   return (
     <article className="bg-surface-1 rounded-2xl border border-border-light p-5 flex flex-col transition-all duration-300 hover:shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:-translate-y-0.5">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
-        <Link href={`/papers/${paper.slug}`} className="group flex-1 min-w-0">
+        <Link href={withLocale(lang, `/papers/${paper.slug}`)} className="group flex-1 min-w-0">
           <h3 className="font-semibold text-sm text-text-primary group-hover:text-accent-600 transition-colors duration-200 leading-snug line-clamp-2">
-            {paper.title}
+            {title}
           </h3>
         </Link>
         <span className="shrink-0 text-xs font-medium text-text-muted bg-surface-2 px-2 py-0.5 rounded-full">
@@ -107,19 +139,19 @@ export default function ShowcaseCard({ paper, meta }: { paper: Paper; meta?: Rep
               {meta.license}
             </span>
           )}
-          <span className="inline-flex items-center gap-1" title={`Last pushed: ${meta.pushed_at}`}>
+          <span className="inline-flex items-center gap-1" title={copy.lastPushed.replace('{date}', meta.pushed_at)}>
             <svg className="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
               <path d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.37.65l2.5 1.5a.75.75 0 10.76-1.3L8.5 7.87V4.75z" />
             </svg>
-            {relativeTime(meta.pushed_at)}
+            {relativeTime(meta.pushed_at, copy)}
           </span>
         </div>
       )}
 
       {/* Abstract */}
-      {paper.abstract && (
+      {abstract && (
         <p className="mt-3 text-xs text-text-secondary leading-relaxed line-clamp-3 flex-1">
-          {paper.abstract}
+          {abstract}
         </p>
       )}
 
@@ -164,14 +196,14 @@ export default function ShowcaseCard({ paper, meta }: { paper: Paper; meta?: Rep
             rel="noopener noreferrer"
             className="text-xs text-text-muted hover:text-accent-600 transition-colors duration-200"
           >
-            Project
+            {copy.project}
           </a>
         )}
         <Link
-          href={`/papers/${paper.slug}`}
+          href={withLocale(lang, `/papers/${paper.slug}`)}
           className="ml-auto text-xs text-accent-500 font-medium hover:text-accent-700 transition-colors duration-200"
         >
-          Details &rarr;
+          {copy.details} &rarr;
         </Link>
       </div>
     </article>

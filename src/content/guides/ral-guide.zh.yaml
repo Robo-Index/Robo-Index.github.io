@@ -48,7 +48,7 @@ phases:
           - type: list
             items:
               - "论文**完整度高** → 投 RAL。有 rebuttal 机会，质量越高反而越容易中"
-              - '论文**不太完整** → 投 ICRA。没有 rebuttal，有一定概率性，完整论文反而可能"运气不好"没中'
+              - "论文**不太完整** → 投 ICRA。没有 rebuttal，有一定概率性，完整论文反而可能“运气不好”没中"
 
       - id: formatting
         title: "写作与格式要求"
