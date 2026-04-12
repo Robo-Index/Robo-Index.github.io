@@ -1,50 +1,50 @@
-title: "RAL 审稿周期与 Transfer"
-title_en: "RAL Review Timeline & Transfer"
+title: "RAL Review Timeline & Transfer"
+title_zh: "RAL 审稿周期与 Transfer"
 category: timeline
 venue: RA-L
 sections:
-  - heading: "各阶段时间线"
-    heading_en: "Stage-by-Stage Timeline"
+  - heading: "Stage-by-Stage Timeline"
+    heading_zh: "各阶段时间线"
     items:
-      - text: "提交 → 一审结果：约 2.5~3 个月"
-        text_en: "Submission → First decision: ~2.5-3 months"
+      - text: "Submission → First decision: ~2.5-3 months"
+        text_zh: "提交 → 一审结果：约 2.5~3 个月"
         source: guide
-      - text: "Rebuttal 修改期：30 天"
-        text_en: "Rebuttal revision: 30 days"
+      - text: "Rebuttal revision: 30 days"
+        text_zh: "Rebuttal 修改期：30 天"
         source: guide
-      - text: "Revision → AE 回复：1~2 周"
-        text_en: "Revision → AE response: 1-2 weeks"
+      - text: "Revision → AE response: 1-2 weeks"
+        text_zh: "Revision → AE 回复：1~2 周"
         source: guide
-      - text: "Accept → Camera-ready：14 天（hard deadline）"
-        text_en: "Accept → Camera-ready: 14 days (hard deadline)"
+      - text: "Accept → Camera-ready: 14 days (hard deadline)"
+        text_zh: "Accept → Camera-ready：14 天（hard deadline）"
         source: official
         url: "https://www.ieee-ras.org/publications/ra-l/final-submission-checklist/"
-      - text: "总周期约 4~5 个月（官方承诺 6 个月内）"
-        text_en: "Total ~4-5 months (officially guaranteed within 6 months)"
+      - text: "Total ~4-5 months (officially guaranteed within 6 months)"
+        text_zh: "总周期约 4~5 个月（官方承诺 6 个月内）"
         source: official
         url: "https://www.ieee-ras.org/publications/ra-l/"
 
-  - heading: "Transfer 规则"
-    heading_en: "Transfer Rules"
+  - heading: "Transfer Rules"
+    heading_zh: "Transfer 规则"
     items:
-      - text: "Accept 后 270 天内可 transfer 到 ICRA/IROS/CASE 等会议"
-        text_en: "Transfer to ICRA/IROS/CASE within 270 days of acceptance"
+      - text: "Transfer to ICRA/IROS/CASE within 270 days of acceptance"
+        text_zh: "Accept 后 270 天内可 transfer 到 ICRA/IROS/CASE 等会议"
         source: official
         url: "https://www.ieee-ras.org/publications/ra-l/"
-      - text: "Accept 后立刻可操作，不需要等缴费或见刊"
-        text_en: "Can transfer immediately after acceptance — no need to wait for payment or publication"
+      - text: "Can transfer immediately after acceptance — no need to wait for payment or publication"
+        text_zh: "Accept 后立刻可操作，不需要等缴费或见刊"
         source: guide
-      - text: "Transfer 不需要额外审稿，但需交会议注册费"
-        text_en: "No additional review for transfer, but conference registration fee required"
+      - text: "No additional review for transfer, but conference registration fee required"
+        text_zh: "Transfer 不需要额外审稿，但需交会议注册费"
         source: guide
 
-  - heading: "费用"
-    heading_en: "Fees"
+  - heading: "Fees"
+    heading_zh: "费用"
     items:
-      - text: "6 页免费，超出每页 $175 USD，最多 8 页"
-        text_en: "6 pages free, $175 per extra page, max 8 pages"
+      - text: "6 pages free, $175 per extra page, max 8 pages"
+        text_zh: "6 页免费，超出每页 $175 USD，最多 8 页"
         source: official
         url: "https://www.ieee-ras.org/publications/ra-l/final-submission-checklist/"
-      - text: "Open access 可选，不买也行"
-        text_en: "Open access is optional"
+      - text: "Open access is optional"
+        text_zh: "Open access 可选，不买也行"
         source: guide

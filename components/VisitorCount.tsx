@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
-export default function VisitorCount() {
+export default function VisitorCount({ label }: { label: string }) {
   const [count, setCount] = useState<string | null>(null)
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function VisitorCount() {
   return (
     <span className="flex items-center gap-1.5">
       <span className="text-border">|</span>
-      <span>🌍 {count} visitors</span>
+      <span>🌍 {count} {label}</span>
     </span>
   )
 }

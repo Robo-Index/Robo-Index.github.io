@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Header from '@/components/Header'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
@@ -32,10 +31,7 @@ export default function RootLayout({
           src="//gc.zgo.at/count.js"
         />
       </head>
-      <body className="font-sans">
-        <Header />
-        {children}
-      </body>
+      <body className="font-sans">{children}</body>
     </html>
   )
 }

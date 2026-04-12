@@ -2,7 +2,8 @@ title: DRL-robot-navigation
 venue: RA-L
 year: 2022
 authors: []
-abstract: 2022 ICRA 复现
+abstract: "2022 ICRA reproduction"
+abstract_zh: "2022 ICRA 复现"
 tags: []
 repo: https://github.com/TianYu-Geng/DRL_ROBOT_NAVIGATION
 date_added: 2026-04-09

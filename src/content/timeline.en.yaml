@@ -1,37 +1,38 @@
 stages:
-  - name: "提交 → 一审"
-    name_en: "Submit → Review"
+  - name: "Submit → First decision"
+    name_zh: "提交 → 一审"
     duration_min: 75
     duration_max: 90
     unit: days
     source: guide
   - name: "Rebuttal"
-    name_en: "Rebuttal"
+    name_zh: "Rebuttal"
     duration_min: 30
     duration_max: 30
     unit: days
     source: guide
-  - name: "Revision → AE"
-    name_en: "Revision → AE"
+  - name: "Revision → AE response"
+    name_zh: "Revision → AE"
     duration_min: 7
     duration_max: 14
     unit: days
     source: guide
   - name: "Camera-ready"
-    name_en: "Camera-ready"
+    name_zh: "Camera-ready"
     duration_min: 14
     duration_max: 14
     unit: days
     source: official
     note: "Hard deadline"
-  - name: "→ Early Access"
-    name_en: "→ Early Access"
+    note_zh: "硬截止"
+  - name: "Early Access"
+    name_zh: "→ Early Access"
     duration_min: 3
     duration_max: 7
     unit: days
     source: official
-  - name: "→ 正式发表"
-    name_en: "→ Publication"
+  - name: "Publication"
+    name_zh: "→ 正式发表"
     duration_min: 20
     duration_max: 30
     unit: days

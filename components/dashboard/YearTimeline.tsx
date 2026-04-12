@@ -1,4 +1,10 @@
-export default function YearTimeline({ years }: { years: Record<string, number> }) {
+export default function YearTimeline({
+  years,
+  yoySuffix,
+}: {
+  years: Record<string, number>
+  yoySuffix: string
+}) {
   const entries = Object.entries(years)
     .map(([y, c]) => ({ year: y, count: c }))
     .sort((a, b) => Number(a.year) - Number(b.year))
@@ -14,7 +20,7 @@ export default function YearTimeline({ years }: { years: Record<string, number> 
     const curr = counts[counts.length - 1]
     if (prev > 0) {
       const pct = Math.round(((curr - prev) / prev) * 100)
-      growthLabel = pct >= 0 ? `+${pct}% YoY` : `${pct}% YoY`
+      growthLabel = pct >= 0 ? `+${pct}% ${yoySuffix}` : `${pct}% ${yoySuffix}`
     }
   }
 
