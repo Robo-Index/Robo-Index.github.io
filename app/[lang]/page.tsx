@@ -5,8 +5,12 @@ import WorldMapBackground from '@/components/WorldMapBackground'
 import VisitorCount from '@/components/VisitorCount'
 import VisitorLocationLayer from '@/components/VisitorLocationLayer'
 import { getDictionary } from '@/src/i18n/dictionaries'
-import { buildAlternates, isLocale, withLocale } from '@/src/lib/i18n'
+import { buildAlternates, isLocale, locales, withLocale } from '@/src/lib/i18n'
 import { getAllPapers } from '@/src/lib/papers'
+
+export function generateStaticParams() {
+  return locales.map(lang => ({ lang }))
+}
 
 const venues = [
   { name: 'RA-L', live: true, color: 'bg-accent-500', text: 'text-white', border: '' },

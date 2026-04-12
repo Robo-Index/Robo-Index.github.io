@@ -2,7 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getDictionary } from '@/src/i18n/dictionaries'
-import { buildAlternates, isLocale, withLocale } from '@/src/lib/i18n'
+import { buildAlternates, isLocale, locales, withLocale } from '@/src/lib/i18n'
+
+export function generateStaticParams() {
+  return locales.map(lang => ({ lang }))
+}
 
 export async function generateMetadata({
   params,

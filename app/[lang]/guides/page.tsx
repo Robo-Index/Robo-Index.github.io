@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import GuideTOC from '@/components/GuideTOC'
 import { getDictionary } from '@/src/i18n/dictionaries'
-import { buildAlternates, isLocale } from '@/src/lib/i18n'
+import { buildAlternates, isLocale, locales } from '@/src/lib/i18n'
 import { getFullGuide } from '@/src/lib/guides'
 import type { GuideBlock, GuideChapter, GuidePhase } from '@/src/lib/guides'
 
@@ -142,6 +142,10 @@ function PhaseSection({
       </div>
     </div>
   )
+}
+
+export function generateStaticParams() {
+  return locales.map(lang => ({ lang }))
 }
 
 export async function generateMetadata({

@@ -6,8 +6,12 @@ import { notFound } from 'next/navigation'
 import DashboardClient from '@/components/dashboard/DashboardClient'
 import SubmissionTimeline from '@/components/dashboard/SubmissionTimeline'
 import { getDictionary } from '@/src/i18n/dictionaries'
-import { buildAlternates, isLocale } from '@/src/lib/i18n'
+import { buildAlternates, isLocale, locales } from '@/src/lib/i18n'
 import type { TimelineStage } from '@/src/lib/types'
+
+export function generateStaticParams() {
+  return locales.map(lang => ({ lang }))
+}
 
 function loadTimeline(lang: 'en' | 'zh') {
   const requestedPath = path.join(process.cwd(), `src/content/timeline.${lang}.yaml`)

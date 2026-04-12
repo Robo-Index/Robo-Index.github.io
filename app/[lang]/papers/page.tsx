@@ -2,8 +2,12 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import PapersPageClient from '@/components/PapersPageClient'
 import { getDictionary } from '@/src/i18n/dictionaries'
-import { buildAlternates, isLocale } from '@/src/lib/i18n'
+import { buildAlternates, isLocale, locales } from '@/src/lib/i18n'
 import { getAllPapers, getAllTags, getAllVenues } from '@/src/lib/papers'
+
+export function generateStaticParams() {
+  return locales.map(lang => ({ lang }))
+}
 
 export async function generateMetadata({
   params,

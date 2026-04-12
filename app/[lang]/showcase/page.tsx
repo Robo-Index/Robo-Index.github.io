@@ -2,10 +2,14 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import ShowcaseClient from '@/components/ShowcaseClient'
 import { getDictionary } from '@/src/i18n/dictionaries'
-import { buildAlternates, isLocale } from '@/src/lib/i18n'
+import { buildAlternates, isLocale, locales } from '@/src/lib/i18n'
 import { getAllPapers, getAllTags } from '@/src/lib/papers'
 import { getRepoMetaMap } from '@/src/lib/repos'
 import type { RepoMeta } from '@/src/lib/types'
+
+export function generateStaticParams() {
+  return locales.map(lang => ({ lang }))
+}
 
 function normalizeUrl(url: string): string {
   return url.toLowerCase().replace(/\/$/, '')
