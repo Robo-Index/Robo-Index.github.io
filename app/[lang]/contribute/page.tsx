@@ -104,6 +104,7 @@ export default async function ContributePage({
         </div>
       </div>
 
+      {contributors.length > 0 && (
       <div id="contributors" className="mb-12">
         <h2 className="text-lg font-semibold text-text-primary mb-2">{dict.contribute.contributors}</h2>
         <p className="text-sm text-text-secondary mb-6">{dict.contribute.contributorsSummary}</p>
@@ -134,6 +135,7 @@ export default async function ContributePage({
           ))}
         </div>
       </div>
+      )}
 
       <div className="text-center pt-8 border-t border-border-light">
         <p className="text-sm text-text-muted">

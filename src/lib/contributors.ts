@@ -6,8 +6,7 @@ export interface Person {
 export const maintainers: Person[] = [
   { name: 'Ce Hao (郝策)', github: 'CeHao1' },
   { name: 'Yinglei Zhu', github: 'fly-pigTH' },
-]
-
-export const contributors: Person[] = [
   { name: 'David Li', github: 'DavidLi03' },
 ]
+
+export const contributors: Person[] = []

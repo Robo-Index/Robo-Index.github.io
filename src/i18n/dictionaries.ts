@@ -349,15 +349,14 @@ const dictionaries: Record<Locale, Dictionary> = {
           role: 'Technical Development',
           desc: 'RoboIndex platform, ral.skill development, data pipeline',
         },
+        {
+          role: 'Internationalization & Data',
+          desc: 'Bilingual routing (i18n) and data-related contributions.',
+        },
       ],
       contributors: 'Contributors',
       contributorsSummary: 'Thanks to everyone who has helped grow RoboIndex.',
-      contributorRoles: [
-        {
-          role: 'Bilingual routing (i18n)',
-          desc: 'Designed and implemented English/Chinese routing and content structure.',
-        },
-      ],
+      contributorRoles: [],
     },
     ralSkill: {
       metadataTitle: 'ral.skill — AI Submission Assistant',
@@ -584,15 +583,14 @@ const dictionaries: Record<Locale, Dictionary> = {
           role: '技术开发',
           desc: 'RoboIndex 平台、ral.skill 开发与数据流水线',
         },
+        {
+          role: '多语言与数据',
+          desc: '多语言路由（i18n）与数据相关工作。',
+        },
       ],
       contributors: '社区贡献者',
       contributorsSummary: '感谢所有帮助 RoboIndex 成长的社区成员。',
-      contributorRoles: [
-        {
-          role: '多语言支持（i18n）',
-          desc: '设计并实现了英文 / 中文的路由与内容结构。',
-        },
-      ],
+      contributorRoles: [],
     },
     ralSkill: {
       metadataTitle: 'ral.skill — AI 投稿助手',
