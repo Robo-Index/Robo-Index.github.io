@@ -23,6 +23,8 @@ export interface Dictionary {
     visitorsLabel: string
     skillLabel: string
     browseCta: string
+    builtByNote: string
+    builtByLink: string
     metadataTitle: string
     metadataDescription: string
   }
@@ -136,6 +138,12 @@ export interface Dictionary {
       role: string
       desc: string
     }>
+    contributors: string
+    contributorsSummary: string
+    contributorRoles: Array<{
+      role: string
+      desc: string
+    }>
   }
   ralSkill: {
     metadataTitle: string
@@ -195,6 +203,8 @@ const dictionaries: Record<Locale, Dictionary> = {
       visitorsLabel: 'visitors',
       skillLabel: '1 skill for all',
       browseCta: 'Browse papers',
+      builtByNote: 'Built by the community',
+      builtByLink: 'See contributors',
       metadataTitle: 'RoboIndex',
       metadataDescription: 'Structured robotics research paper data',
     },
@@ -339,7 +349,14 @@ const dictionaries: Record<Locale, Dictionary> = {
           role: 'Technical Development',
           desc: 'RoboIndex platform, ral.skill development, data pipeline',
         },
+        {
+          role: 'Internationalization & Data',
+          desc: 'Bilingual routing (i18n) and data-related contributions.',
+        },
       ],
+      contributors: 'Contributors',
+      contributorsSummary: 'Thanks to everyone who has helped grow RoboIndex.',
+      contributorRoles: [],
     },
     ralSkill: {
       metadataTitle: 'ral.skill — AI Submission Assistant',
@@ -420,6 +437,8 @@ const dictionaries: Record<Locale, Dictionary> = {
       visitorsLabel: '位访客',
       skillLabel: '一个 skill，贯穿全流程',
       browseCta: '浏览论文',
+      builtByNote: '由社区共同构建',
+      builtByLink: '查看贡献者',
       metadataTitle: 'RoboIndex',
       metadataDescription: '结构化机器人研究论文数据',
     },
@@ -564,7 +583,14 @@ const dictionaries: Record<Locale, Dictionary> = {
           role: '技术开发',
           desc: 'RoboIndex 平台、ral.skill 开发与数据流水线',
         },
+        {
+          role: '多语言与数据',
+          desc: '多语言路由（i18n）与数据相关工作。',
+        },
       ],
+      contributors: '社区贡献者',
+      contributorsSummary: '感谢所有帮助 RoboIndex 成长的社区成员。',
+      contributorRoles: [],
     },
     ralSkill: {
       metadataTitle: 'ral.skill — AI 投稿助手',

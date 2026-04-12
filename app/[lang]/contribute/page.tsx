@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getDictionary } from '@/src/i18n/dictionaries'
 import { buildAlternates, isLocale, locales } from '@/src/lib/i18n'
+import { maintainers, contributors } from '@/src/lib/contributors'
 
 export function generateStaticParams() {
   return locales.map(lang => ({ lang }))
@@ -11,17 +12,6 @@ const links = [
   'https://github.com/Robo-Index/Robo-Index.github.io/issues/new?title=Submission+Experience&labels=guide',
   'https://github.com/fly-pigTH/ral-skill',
   'https://github.com/Robo-Index/Robo-Index.github.io/issues',
-]
-
-const team = [
-  {
-    name: 'Ce Hao (郝策)',
-    github: 'CeHao1',
-  },
-  {
-    name: 'Yinglei Zhu',
-    github: 'fly-pigTH',
-  },
 ]
 
 export async function generateMetadata({
@@ -87,7 +77,7 @@ export default async function ContributePage({
       <div className="mb-12">
         <h2 className="text-lg font-semibold text-text-primary mb-6">{dict.contribute.team}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {team.map((member, index) => (
+          {maintainers.map((member, index) => (
             <div key={member.github} className="bg-surface-1 border border-border-light rounded-2xl p-5">
               <div className="flex items-center gap-3 mb-3">
                 <img
@@ -113,6 +103,39 @@ export default async function ContributePage({
           ))}
         </div>
       </div>
+
+      {contributors.length > 0 && (
+      <div id="contributors" className="mb-12">
+        <h2 className="text-lg font-semibold text-text-primary mb-2">{dict.contribute.contributors}</h2>
+        <p className="text-sm text-text-secondary mb-6">{dict.contribute.contributorsSummary}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {contributors.map((person, index) => (
+            <div key={person.github} className="bg-surface-1 border border-border-light rounded-2xl p-5">
+              <div className="flex items-center gap-3 mb-3">
+                <img
+                  src={`https://github.com/${person.github}.png?size=80`}
+                  alt={person.name}
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <div className="text-sm font-semibold text-text-primary">{person.name}</div>
+                  <a
+                    href={`https://github.com/${person.github}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-accent-500 hover:underline"
+                  >
+                    @{person.github}
+                  </a>
+                </div>
+              </div>
+              <div className="text-xs font-medium text-accent-600 mb-1">{dict.contribute.contributorRoles[index].role}</div>
+              <div className="text-xs text-text-muted">{dict.contribute.contributorRoles[index].desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      )}
 
       <div className="text-center pt-8 border-t border-border-light">
         <p className="text-sm text-text-muted">
