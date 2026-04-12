@@ -7,6 +7,7 @@ import VisitorLocationLayer from '@/components/VisitorLocationLayer'
 import { getDictionary } from '@/src/i18n/dictionaries'
 import { buildAlternates, isLocale, locales, withLocale } from '@/src/lib/i18n'
 import { getAllPapers } from '@/src/lib/papers'
+import { maintainers, contributors } from '@/src/lib/contributors'
 
 export function generateStaticParams() {
   return locales.map(lang => ({ lang }))
@@ -100,6 +101,27 @@ export default async function HomePage({
             {dict.home.browseCta}
             <span aria-hidden="true">&rarr;</span>
           </Link>
+
+          <div className="flex items-center gap-2 pt-2 text-[11px] text-text-muted">
+            <span>{dict.home.builtByNote}</span>
+            <div className="flex -space-x-1.5">
+              {[...maintainers, ...contributors].map(person => (
+                <img
+                  key={person.github}
+                  src={`https://github.com/${person.github}.png?size=48`}
+                  alt={person.name}
+                  title={person.name}
+                  className="w-5 h-5 rounded-full border border-surface-0"
+                />
+              ))}
+            </div>
+            <Link
+              href={withLocale(lang, '/contribute#contributors')}
+              className="text-accent-500 hover:underline"
+            >
+              {dict.home.builtByLink}
+            </Link>
+          </div>
         </div>
       </div>
     </main>
