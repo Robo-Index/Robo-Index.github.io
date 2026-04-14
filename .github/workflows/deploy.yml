@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [dev]
+  schedule:
+    - cron: '0 * * * *'   # hourly, refreshes visitor count
   workflow_dispatch:
 
 permissions:
@@ -26,6 +28,12 @@ jobs:
           cache: 'npm'
 
       - run: npm ci
+
+      - name: Refresh visitor count
+        run: |
+          curl -sf "https://roboindex.goatcounter.com/counter/TOTAL.json" \
+            -o public/visitor-count.json \
+            || echo '{"count":"0","count_unique":"0"}' > public/visitor-count.json
 
       - name: Build
         run: npm run prebuild && npm run build
