@@ -23,8 +23,11 @@ export default function VisitorCount({ label }: { label: string }) {
           return r.json()
         })
         .then((data: { count?: string }) => {
-          if (data.count && parseInt(data.count.replace(/,/g, '')) > 0) {
-            setCount(data.count)
+          const n = data.count ? parseInt(data.count.replace(/,/g, '')) : 0
+          if (n > 0) {
+            setCount(data.count!)
+          } else {
+            throw new Error('empty count')
           }
         })
         .catch(() => tryNext(index + 1))
