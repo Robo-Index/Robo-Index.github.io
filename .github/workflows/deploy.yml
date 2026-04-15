@@ -31,9 +31,13 @@ jobs:
 
       - name: Refresh visitor count
         run: |
-          curl -sf "https://roboindex.goatcounter.com/counter/TOTAL.json" \
-            -o public/visitor-count.json \
-            || echo '{"count":"0","count_unique":"0"}' > public/visitor-count.json
+          if curl -sf "https://roboindex.goatcounter.com/counter/TOTAL.json" \
+               -o public/visitor-count.json.new; then
+            mv public/visitor-count.json.new public/visitor-count.json
+          else
+            echo "GoatCounter fetch failed, keeping committed visitor-count.json"
+            rm -f public/visitor-count.json.new
+          fi
 
       - name: Build
         run: npm run prebuild && npm run build
