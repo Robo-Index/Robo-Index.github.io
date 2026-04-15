@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [dev]
+  schedule:
+    - cron: '0 * * * *'   # hourly, refreshes visitor count
   workflow_dispatch:
 
 permissions:
@@ -26,6 +28,16 @@ jobs:
           cache: 'npm'
 
       - run: npm ci
+
+      - name: Refresh visitor count
+        run: |
+          if curl -sf "https://roboindex.goatcounter.com/counter/TOTAL.json" \
+               -o public/visitor-count.json.new; then
+            mv public/visitor-count.json.new public/visitor-count.json
+          else
+            echo "GoatCounter fetch failed, keeping committed visitor-count.json"
+            rm -f public/visitor-count.json.new
+          fi
 
       - name: Build
         run: npm run prebuild && npm run build
