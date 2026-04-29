@@ -353,6 +353,10 @@ const dictionaries: Record<Locale, Dictionary> = {
           role: 'Internationalization & Data',
           desc: 'Bilingual routing (i18n) and data-related contributions.',
         },
+        {
+          role: 'Co-author',
+          desc: 'RoboIndex team co-author.',
+        },
       ],
       contributors: 'Contributors',
       contributorsSummary: 'Thanks to everyone who has helped grow RoboIndex.',
@@ -591,6 +595,10 @@ const dictionaries: Record<Locale, Dictionary> = {
         {
           role: '多语言与数据',
           desc: '多语言路由（i18n）与数据相关工作。',
+        },
+        {
+          role: '共同作者',
+          desc: 'RoboIndex 团队共同作者。',
         },
       ],
       contributors: '社区贡献者',
