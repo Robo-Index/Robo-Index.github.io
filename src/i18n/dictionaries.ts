@@ -356,7 +356,12 @@ const dictionaries: Record<Locale, Dictionary> = {
       ],
       contributors: 'Contributors',
       contributorsSummary: 'Thanks to everyone who has helped grow RoboIndex.',
-      contributorRoles: [],
+      contributorRoles: [
+        {
+          role: 'Contributor',
+          desc: 'Community contribution to RoboIndex.',
+        },
+      ],
     },
     ralSkill: {
       metadataTitle: 'ral.skill — AI Submission Assistant',
@@ -590,7 +595,12 @@ const dictionaries: Record<Locale, Dictionary> = {
       ],
       contributors: '社区贡献者',
       contributorsSummary: '感谢所有帮助 RoboIndex 成长的社区成员。',
-      contributorRoles: [],
+      contributorRoles: [
+        {
+          role: '社区贡献者',
+          desc: '参与 RoboIndex 社区共建。',
+        },
+      ],
     },
     ralSkill: {
       metadataTitle: 'ral.skill — AI 投稿助手',
