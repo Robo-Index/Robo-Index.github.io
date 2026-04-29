@@ -127,6 +127,14 @@ export default async function ContributePage({
                   >
                     @{person.github}
                   </a>
+                  {person.email && (
+                    <a
+                      href={`mailto:${person.email}`}
+                      className="block text-xs text-text-muted hover:text-accent-500 hover:underline"
+                    >
+                      {person.email}
+                    </a>
+                  )}
                 </div>
               </div>
               <div className="text-xs font-medium text-accent-600 mb-1">{dict.contribute.contributorRoles[index].role}</div>

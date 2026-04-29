@@ -1,6 +1,7 @@
 export interface Person {
   name: string
   github: string
+  email?: string
 }
 
 export const maintainers: Person[] = [
@@ -9,4 +10,6 @@ export const maintainers: Person[] = [
   { name: 'David Li', github: 'DavidLi03' },
 ]
 
-export const contributors: Person[] = []
+export const contributors: Person[] = [
+  { name: 'louisz', github: 'louisz', email: 'zylbhsf@gmail.com' },
+]
